@@ -11,7 +11,7 @@ console.log("Fun fact: " + funFact + ".");
 
 // Reassign values for partner's information
 personName = "Jane";
-pets = 1;
+pets = 4;
 funFact = "I have climbed Mount Everest.";
 
 // Log introduction to console with partner's information
