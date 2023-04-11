@@ -1,8 +1,8 @@
 // Write Your JavaScript Code Here
 // Define variables
-let personName = "Wade Desco";
-let pets = 1;
-let funFact = "I played sports in highschool";
+var personName = "Wade Desco";
+var pets = 1;
+var funFact = "I played sports in highschool";
 
 // Log introduction to console
 console.log("My name is " + personName + ".");
