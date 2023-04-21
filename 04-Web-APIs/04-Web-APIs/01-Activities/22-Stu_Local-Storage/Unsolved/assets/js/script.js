@@ -13,14 +13,18 @@ function displayMessage(type, message) {
 }
 
 function renderLastRegistered() {
-  // TODO: Retrieve the last email and password and render it to the page
+  var lastRegisteredUser = JSON.parse(localStorage.getItem("lastRegisteredUser"));
+  if (lastRegisteredUser) {
+    userEmailSpan.textContent = lastRegisteredUser.email;
+    userPasswordSpan.textContent = lastRegisteredUser.password;
+  }
 }
 
 signUpButton.addEventListener("click", function(event) {
   event.preventDefault();
 
-  var email = document.querySelector("#email").value;
-  var password = document.querySelector("#password").value;
+  var email = emailInput.value;
+  var password = passwordInput.value;
 
   if (email === "") {
     displayMessage("error", "Email cannot be blank");
@@ -29,6 +33,12 @@ signUpButton.addEventListener("click", function(event) {
   } else {
     displayMessage("success", "Registered successfully");
 
-  // TODO: Save email and password to localStorage and render the last registered user
+    // Save email and password to localStorage
+    var lastRegisteredUser = { email: email, password: password };
+    localStorage.setItem("lastRegisteredUser", JSON.stringify(lastRegisteredUser));
+
+    // Render the last registered user
+    renderLastRegistered();
   }
 });
+
