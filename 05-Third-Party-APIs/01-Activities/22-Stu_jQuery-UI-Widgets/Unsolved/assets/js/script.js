@@ -30,7 +30,12 @@ var handleFormSubmit = function (event) {
 formEl.on('submit', handleFormSubmit);
 
 // Add Autocomplete widget here
-//
+nameInputEl.autocomplete({
+  source: ['HTML', 'CSS', 'JavaScript', 'Python', 'Java', 'C#', 'PHP', 'Ruby', 'Swift', 'SQL']
+});
 
 // Add Datepicker widget here
-//
+dateInputEl.datepicker({
+  dateFormat: 'dd/mm/yy'
+});
+
