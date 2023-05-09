@@ -21,10 +21,12 @@ var formSubmitHandler = function (event) {
 
 var buttonClickHandler = function (event) {
   // What is `event.target` referencing?
-  // TODO: Write your answer here
+  // event.target is referencing the element that triggered the event. In this case, it is the button that was clicked.
   var language = event.target.getAttribute('data-language');
 
   // Why is this `if` block in place?
+  // The if block is in place to check if the button that was clicked has a data-language attribute. 
+  // If it does, it means that the button is a language button, and we want to fetch and display featured repositories for that language.
   // TODO: Write your answer here
   if (language) {
     getFeaturedRepos(language);
@@ -55,7 +57,8 @@ var getUserRepos = function (user) {
 
 var getFeaturedRepos = function (language) {
   // What are the query parameters doing here?
-  // TODO: Write your answer here
+  // TODO:  The query parameters in the getFeaturedRepos function are used to specify the search criteria for the featured repositories. 
+  // In this case, we are searching for repositories that have the specified language and are sorted by the number of help-wanted issues.
   var apiUrl = 'https://api.github.com/search/repositories?q=' + language + '+is:featured&sort=help-wanted-issues';
 
   fetch(apiUrl).then(function (response) {
@@ -73,7 +76,8 @@ var displayRepos = function (repos, searchTerm) {
   if (repos.length === 0) {
     repoContainerEl.textContent = 'No repositories found.';
     // What would happen if there was no `return;` here?
-    // TODO: Write your answer here
+    // TODO: If there was no return; statement in the displayRepos function when there are no repositories to display, the function would continue executing and try to display repositories that don't exist, resulting in errors or unexpected behavior. 
+    // The return; statement stops the function execution when there are no repositories to display.
     return;
   }
 
@@ -81,7 +85,8 @@ var displayRepos = function (repos, searchTerm) {
 
   for (var i = 0; i < repos.length; i++) {
     // What is the result of this string concatenation?
-    // TODO: Write your answer here
+    // TODO: var repoName = repos[i].owner.login + '/' + repos[i].name; is a string that combines the username of the repository owner and the name of the repository, separated by a forward slash (/). 
+    // This string is used to display the name of the repository in the list of repositories.
     var repoName = repos[i].owner.login + '/' + repos[i].name;
 
     var repoEl = document.createElement('div');
