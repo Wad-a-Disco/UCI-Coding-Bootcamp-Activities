@@ -1,7 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 
-
 inquirer
   .prompt([
     {
@@ -42,6 +41,8 @@ inquirer
   
           h1 {
             color: #333;
+            text-align: center;
+            text-transform: uppercase;
           }
   
           p {
@@ -62,7 +63,7 @@ inquirer
         </style>
       </head>
       <body>
-        <h1>Portfolio</h1>
+        <h1>PORTFOLIO</h1>
   
         <div class="info">
           <p>Name: ${answers.name}</p>
