@@ -1,5 +1,3 @@
-// TODO: Debug the code so that Comment shows the reaction emojis when its printMetaData() function is run.
-
 class ForumItem {
   constructor(authorName, text, createdOn) {
     this.authorName = authorName;
@@ -29,6 +27,10 @@ class Comment extends ForumItem {
     super(authorName, text, createdOn);
     this.reaction = reaction;
   }
+
+  printMetaData() {
+    console.log(`Created by ${this.authorName} on ${this.createdOn} ${this.reaction}`);
+  }
 }
 
 const newPost = new BlogPost(
@@ -46,6 +48,4 @@ const newComment = new Comment(
 );
 
 newPost.printMetaData();
-
-// TODO: Determine why the comment meta data does not include the reaction emoji and modify the code so that it does.
 newComment.printMetaData();
