@@ -45,3 +45,19 @@ function BlogPost(authorName, title, text, createdOn) {
  * Now, when you call the printMetaData() method, it will display an introduction message like 
  * "Created by John Doe on December 5th, 2022" in the console, with the date formatted according to the specified options.
  */
+
+// Bonus Question: Answered
+/**
+ * avaScript provides several built-in constructors for native objects. 
+ * These constructors allow you to create instances of various types, such as numbers, strings, arrays, dates, and more. 
+ * Here are some examples of built-in JavaScript constructors:
+ * 
+ * 1) Number: Constructs a numeric value.
+ * 2) String: Constructs a string value.
+ * 3) Boolean: Constructs a boolean value.
+ * 4) Array: Constructs an array object.
+ * 5) Object: Constructs a generic object.
+ * 6) Date: Constructs a date object.
+ * 7) RegExp: Constructs a regular expression object.
+ * 8) Error: Constructs an error object.
+ */
