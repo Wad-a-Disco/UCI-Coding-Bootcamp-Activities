@@ -1,12 +1,17 @@
-// TODO: Create a class constructor named ForumItem that takes in 'authorName', 'text', and 'createdOn'.
-
-// TODO: Setup BlogPost and Comment so they inherit their structure from ForumItem.
-class BlogPost {
-  constructor(authorName, title, text, createdOn) {
+// Parent class
+class ForumItem {
+  constructor(authorName, text, createdOn) {
     this.authorName = authorName;
-    this.title = title;
     this.text = text;
     this.createdOn = createdOn;
+  }
+}
+
+// Child class BlogPost
+class BlogPost extends ForumItem {
+  constructor(authorName, title, text, createdOn) {
+    super(authorName, text, createdOn);
+    this.title = title;
     this.comments = [];
   }
 
@@ -15,17 +20,17 @@ class BlogPost {
   }
 }
 
-class Comment {
+// Child class Comment
+class Comment extends ForumItem {
   constructor(authorName, text, createdOn, reaction) {
-    this.authorName = authorName;
-    this.text = text;
-    this.createdOn = createdOn;
+    super(authorName, text, createdOn);
     this.reaction = reaction;
   }
 }
 
-// TODO: Create a new object using the Comment class constructor.
+// Creating instances and logging to console
+const comment = new Comment("John Doe", "This is a comment.", new Date(), "Like");
+const blogPost = new BlogPost("Jane Smith", "My Blog Post", "This is the body of my blog post.", new Date());
 
-// TODO: Create a new object using the BlogPost class constructor.
-
-// TODO: Log both newly created BlogPost and Comment to the console.
+console.log(comment);
+console.log(blogPost);
